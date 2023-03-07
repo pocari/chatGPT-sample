@@ -31,5 +31,11 @@ client = OpenAIClient.new
 
 loop do
   print('prompt> ');
-  puts client.chat(gets.chomp)
+  prompt = gets.chomp
+
+  if prompt == 'exit'
+    break
+  else
+    puts client.chat(prompt)
+  end
 end
