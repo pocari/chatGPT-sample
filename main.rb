@@ -1,3 +1,4 @@
+require 'readline'
 require 'openai'
 
 class OpenAIClient
@@ -30,9 +31,8 @@ end
 client = OpenAIClient.new
 
 loop do
-  print('prompt> ');
-  prompt = gets.chomp
-
+  prompt = Readline.readline('prompt> ', true)
+  break unless prompt
   if prompt == 'exit'
     break
   else
